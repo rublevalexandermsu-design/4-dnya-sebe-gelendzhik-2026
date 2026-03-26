@@ -1,0 +1,46 @@
+<svg width="1600" height="1100" viewBox="0 0 1600 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="800" y1="0" x2="800" y2="1100" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7DB4F0"/>
+      <stop offset="0.28" stop-color="#C6C6F5"/>
+      <stop offset="0.52" stop-color="#F5D0D7"/>
+      <stop offset="0.78" stop-color="#F8E9D9"/>
+      <stop offset="1" stop-color="#EEF6F8"/>
+    </linearGradient>
+    <linearGradient id="water" x1="800" y1="560" x2="800" y2="1100" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#D8EBF1"/>
+      <stop offset="0.45" stop-color="#E9F5F7"/>
+      <stop offset="1" stop-color="#F7FBFC"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(810 300) rotate(90) scale(240 300)">
+      <stop offset="0" stop-color="#FFF7D8" stop-opacity="0.95"/>
+      <stop offset="0.35" stop-color="#FFE8B7" stop-opacity="0.58"/>
+      <stop offset="1" stop-color="#FFE8B7" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur32" x="-100" y="-100" width="1800" height="1300" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1100" fill="url(#sky)"/>
+  <rect y="560" width="1600" height="540" fill="url(#water)"/>
+  <ellipse cx="810" cy="300" rx="350" ry="240" fill="url(#sun)"/>
+
+  <g opacity="0.42" filter="url(#blur32)">
+    <path d="M-80 468C68 416 190 414 318 382C430 354 544 298 664 308C793 318 893 402 1032 400C1166 398 1260 320 1368 314C1490 308 1580 370 1688 422V602H-80V468Z" fill="#D8DDE6"/>
+    <path d="M-60 518C44 478 164 450 310 454C460 458 586 514 728 514C848 514 934 474 1044 466C1176 456 1304 490 1458 478C1550 470 1614 440 1680 424V640H-60V518Z" fill="#C7D3E0"/>
+    <path d="M-90 572C54 530 172 538 300 516C446 490 562 420 720 420C892 420 1034 502 1186 508C1332 514 1480 466 1682 474V710H-90V572Z" fill="#BFCEDB"/>
+  </g>
+
+  <g opacity="0.55">
+    <path d="M0 632C144 616 220 610 350 622C486 634 592 666 738 664C880 662 1000 626 1128 620C1268 614 1384 640 1600 670V1100H0V632Z" fill="#E4F1F5"/>
+    <path d="M0 684C102 674 208 668 344 680C488 694 604 730 738 728C888 726 1000 690 1132 686C1284 682 1408 714 1600 742V1100H0V684Z" fill="#EDF7F9"/>
+    <path d="M0 748C116 736 232 742 352 756C498 774 612 814 740 810C884 806 1016 764 1138 764C1278 764 1424 796 1600 826V1100H0V748Z" fill="#F8FCFD"/>
+  </g>
+
+  <g opacity="0.22">
+    <path d="M0 780C112 772 228 776 366 794C512 812 632 854 758 850C890 846 1012 806 1128 804C1268 802 1404 834 1600 866" stroke="#FFFFFF" stroke-width="3"/>
+    <path d="M0 832C124 824 244 828 374 844C520 862 626 898 754 896C876 894 1008 860 1134 860C1284 860 1418 890 1600 926" stroke="#FFFFFF" stroke-width="2.4"/>
+    <path d="M0 880C104 874 210 878 352 894C498 910 620 946 742 944C878 942 1010 908 1134 910C1270 912 1408 940 1600 980" stroke="#E8F4F8" stroke-width="2"/>
+  </g>
+</svg>
