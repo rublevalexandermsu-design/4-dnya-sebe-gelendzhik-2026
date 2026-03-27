@@ -526,14 +526,14 @@ export default function RetreatLanding() {
                   href={bookingUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-3 rounded-full bg-primary px-8 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-on-primary premium-glow transition-all hover:scale-[1.02]"
+                  className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-primary px-8 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-on-primary premium-glow transition-all hover:scale-[1.02] sm:w-auto"
                 >
                   Забронировать в WhatsApp <ArrowRight size={16} />
                 </a>
                 <a
                   href={brochureUrl}
                   download="gelendzhik-retreat-brochure.pdf"
-                  className="inline-flex items-center justify-center gap-3 rounded-full border border-white/10 bg-white/56 px-8 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-on-surface transition-all hover:border-primary/30 hover:bg-white/70"
+                  className="inline-flex w-full items-center justify-center gap-3 rounded-full border border-white/10 bg-white/56 px-8 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-on-surface transition-all hover:border-primary/30 hover:bg-white/70 sm:w-auto"
                 >
                   <Download size={16} /> Скачать PDF
                 </a>
@@ -541,7 +541,7 @@ export default function RetreatLanding() {
                   href={venueUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-3 rounded-full border border-white/10 bg-white/56 px-8 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-on-surface-variant transition-all hover:border-primary/20 hover:text-on-surface"
+                  className="inline-flex w-full items-center justify-center gap-3 rounded-full border border-white/10 bg-white/56 px-8 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-on-surface-variant transition-all hover:border-primary/20 hover:text-on-surface sm:w-auto"
                 >
                   <MapPinned size={16} /> Место проведения
                 </a>
@@ -778,45 +778,48 @@ export default function RetreatLanding() {
               text="Каждый день — это отдельный шаг: остановка, понимание эмоций, внутренняя опора и собирание себя в спокойное направление."
             />
 
-            <div className="mt-12 grid gap-5 xl:grid-cols-4">
+            <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
               {days.map((day, index) => (
                 <div
                   key={day.day}
-                  className="group relative min-h-[27rem] overflow-hidden rounded-[1.65rem] border border-white/8 shadow-[0_30px_80px_rgba(0,0,0,0.24)]"
+                  className="group relative min-h-[25rem] overflow-hidden rounded-[1.65rem] border border-white/8 shadow-[0_30px_80px_rgba(0,0,0,0.18)] md:min-h-[27rem]"
                 >
                   <img
                     src={programVisuals[index].image}
                     alt={day.title}
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.02)_0%,rgba(241,246,248,0.10)_28%,rgba(221,232,238,0.24)_100%)]" />
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(242,202,80,0.08),transparent_22%)]" />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.08)_0%,rgba(241,246,248,0.12)_24%,rgba(221,232,238,0.22)_100%)]" />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(16,28,42,0.10)_0%,rgba(16,28,42,0.02)_34%,rgba(16,28,42,0.20)_100%)]" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(242,202,80,0.10),transparent_22%)]" />
                   <div className="relative z-10 flex h-full flex-col justify-between p-5 md:p-6">
-                    <div className="flex items-center justify-between">
-                      <span className="text-2xl font-headline italic text-accent-blue/70 md:text-3xl">
-                        0{index + 1}
-                      </span>
-                      <span className="text-[10px] font-black uppercase tracking-[0.22em] text-accent-blue/80">
+                    <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-start">
+                      <div className="flex items-center gap-3">
+                        <span className="inline-flex rounded-full border border-accent-blue/18 bg-white/72 px-4 py-2 text-[11px] font-black uppercase tracking-[0.26em] text-accent-blue backdrop-blur-xl">
+                          {day.day}
+                        </span>
+                        <span className="font-headline text-4xl italic leading-none text-accent-blue/88 md:text-5xl">
+                          0{index + 1}
+                        </span>
+                      </div>
+                      <span className="max-w-[12rem] text-left text-[10px] font-black uppercase tracking-[0.22em] text-accent-blue/80 sm:text-right">
                         {programVisuals[index].kicker}
                       </span>
                     </div>
 
                     <div className="space-y-4">
                       <div>
-                        <p className="text-[10px] font-black uppercase tracking-[0.26em] text-on-surface-variant/80">
-                          {day.day}
-                        </p>
-                        <h3 className="mt-3 font-headline text-3xl italic leading-tight text-on-surface">
+                        <h3 className="mt-1 max-w-[14rem] font-headline text-[2.05rem] italic leading-[1.04] text-on-surface [text-shadow:0_1px_0_rgba(255,255,255,0.18)] md:max-w-none md:text-4xl">
                           {day.title}
                         </h3>
                       </div>
 
                       <div className="space-y-3">
-                        <div className="rounded-2xl border border-white/8 bg-white/34 p-4 backdrop-blur-md">
+                        <div className="rounded-2xl border border-white/8 bg-white/52 p-4 backdrop-blur-md">
                           <p className="text-[10px] font-black uppercase tracking-[0.22em] text-accent-blue">Цель</p>
                           <p className="mt-2 text-sm leading-relaxed text-on-surface-variant">{day.goal}</p>
                         </div>
-                        <div className="rounded-2xl border border-primary/12 bg-white/42 p-4 backdrop-blur-md">
+                        <div className="rounded-2xl border border-primary/12 bg-white/58 p-4 backdrop-blur-md">
                           <p className="text-[10px] font-black uppercase tracking-[0.22em] text-accent-blue">Результат</p>
                           <p className="mt-2 text-sm leading-relaxed text-on-surface-variant">{day.result}</p>
                         </div>
@@ -1032,14 +1035,14 @@ export default function RetreatLanding() {
                       href={bookingUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center justify-center gap-3 rounded-full bg-primary px-8 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-on-primary premium-glow transition-all hover:scale-[1.02]"
+                      className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-primary px-8 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-on-primary premium-glow transition-all hover:scale-[1.02] sm:w-auto"
                     >
                       Забронировать в WhatsApp <ArrowRight size={16} />
                     </a>
                     <a
                       href={brochureUrl}
                       download="gelendzhik-retreat-brochure.pdf"
-                      className="inline-flex items-center justify-center gap-3 rounded-full border border-white/10 bg-white/5 px-8 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-on-surface transition-all hover:border-primary/30"
+                      className="inline-flex w-full items-center justify-center gap-3 rounded-full border border-white/10 bg-white/5 px-8 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-on-surface transition-all hover:border-primary/30 sm:w-auto"
                     >
                       <Download size={16} /> Скачать PDF
                     </a>
@@ -1100,14 +1103,14 @@ export default function RetreatLanding() {
                       href={bookingUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center justify-center gap-3 rounded-full bg-primary px-8 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-on-primary premium-glow transition-all hover:scale-[1.02]"
+                      className="inline-flex w-full items-center justify-center gap-3 rounded-full bg-primary px-8 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-on-primary premium-glow transition-all hover:scale-[1.02] sm:w-auto"
                     >
                       Забронировать в WhatsApp <ArrowRight size={16} />
                     </a>
                     <a
                       href={brochureUrl}
                       download="gelendzhik-retreat-brochure.pdf"
-                      className="inline-flex items-center justify-center gap-3 rounded-full border border-white/10 bg-white/5 px-8 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-on-surface transition-all hover:border-primary/30"
+                      className="inline-flex w-full items-center justify-center gap-3 rounded-full border border-white/10 bg-white/5 px-8 py-4 text-[11px] font-black uppercase tracking-[0.24em] text-on-surface transition-all hover:border-primary/30 sm:w-auto"
                     >
                       <Download size={16} /> Скачать PDF
                     </a>
