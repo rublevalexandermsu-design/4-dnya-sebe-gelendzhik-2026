@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rublevalexandermsu-design.github.io/4-dnya-sebe-gelendzhik-2026/sitemap.xml
+Sitemap: https://gelendzhik.miiiips.ru/sitemap.xml
