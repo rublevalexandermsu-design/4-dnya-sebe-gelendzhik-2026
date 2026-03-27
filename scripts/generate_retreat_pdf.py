@@ -34,6 +34,11 @@ ARIAL_BOLD = r"C:\Windows\Fonts\arialbd.ttf"
 GEORGIA = r"C:\Windows\Fonts\georgia.ttf"
 GEORGIA_BOLD = r"C:\Windows\Fonts\georgiab.ttf"
 
+FONT_SANS = "Helvetica"
+FONT_SANS_BOLD = "Helvetica-Bold"
+FONT_SERIF = "Times-Roman"
+FONT_SERIF_BOLD = "Times-Bold"
+
 for name, path in [
     ("Arial", ARIAL),
     ("Arial-Bold", ARIAL_BOLD),
@@ -45,11 +50,20 @@ for name, path in [
     except Exception:
         pass
 
+if "Arial" in pdfmetrics.getRegisteredFontNames():
+    FONT_SANS = "Arial"
+if "Arial-Bold" in pdfmetrics.getRegisteredFontNames():
+    FONT_SANS_BOLD = "Arial-Bold"
+if "Georgia" in pdfmetrics.getRegisteredFontNames():
+    FONT_SERIF = "Georgia"
+if "Georgia-Bold" in pdfmetrics.getRegisteredFontNames():
+    FONT_SERIF_BOLD = "Georgia-Bold"
+
 styles = getSampleStyleSheet()
 styles.add(
     ParagraphStyle(
         name="Eyebrow",
-        fontName="Arial-Bold",
+        fontName=FONT_SANS_BOLD,
         fontSize=8,
         leading=10,
         textColor=colors.HexColor("#f2ca50"),
@@ -59,7 +73,7 @@ styles.add(
 styles.add(
     ParagraphStyle(
         name="CoverTitle",
-        fontName="Georgia-Bold",
+        fontName=FONT_SERIF_BOLD,
         fontSize=31,
         leading=33,
         textColor=colors.HexColor("#f8f1e7"),
@@ -68,7 +82,7 @@ styles.add(
 styles.add(
     ParagraphStyle(
         name="CoverLead",
-        fontName="Arial",
+        fontName=FONT_SANS,
         fontSize=12,
         leading=18,
         textColor=colors.HexColor("#efe8da"),
@@ -77,7 +91,7 @@ styles.add(
 styles.add(
     ParagraphStyle(
         name="RetreatTitle",
-        fontName="Georgia-Bold",
+        fontName=FONT_SERIF_BOLD,
         fontSize=22,
         leading=26,
         textColor=colors.HexColor("#11151a"),
@@ -86,7 +100,7 @@ styles.add(
 styles.add(
     ParagraphStyle(
         name="Body",
-        fontName="Arial",
+        fontName=FONT_SANS,
         fontSize=10.4,
         leading=15,
         textColor=colors.HexColor("#39414a"),
@@ -95,7 +109,7 @@ styles.add(
 styles.add(
     ParagraphStyle(
         name="Small",
-        fontName="Arial",
+        fontName=FONT_SANS,
         fontSize=9,
         leading=13,
         textColor=colors.HexColor("#55606b"),
@@ -104,7 +118,7 @@ styles.add(
 styles.add(
     ParagraphStyle(
         name="CardTitle",
-        fontName="Georgia-Bold",
+        fontName=FONT_SERIF_BOLD,
         fontSize=15,
         leading=18,
         textColor=colors.HexColor("#11151a"),
@@ -113,7 +127,7 @@ styles.add(
 styles.add(
     ParagraphStyle(
         name="Center",
-        fontName="Arial",
+        fontName=FONT_SANS,
         fontSize=9.5,
         leading=13,
         alignment=TA_CENTER,
@@ -123,7 +137,7 @@ styles.add(
 styles.add(
     ParagraphStyle(
         name="CenterLight",
-        fontName="Arial",
+        fontName=FONT_SANS,
         fontSize=9.5,
         leading=13,
         alignment=TA_CENTER,
@@ -198,7 +212,7 @@ def inner_bg(canvas, doc):
     canvas.setFillColor(colors.HexColor("#f2ca50"))
     canvas.rect(0, A4[1] - 8, A4[0], 3, fill=1, stroke=0)
     canvas.setFillColor(colors.HexColor("#a59a8d"))
-    canvas.setFont("Arial", 8)
+    canvas.setFont(FONT_SANS, 8)
     canvas.drawRightString(A4[0] - 16 * mm, 10 * mm, f"Страница {doc.page}")
     canvas.restoreState()
 
